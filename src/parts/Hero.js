@@ -9,6 +9,7 @@ import IconCities from 'assets/images/icons/ic_cities.svg'
 
 import IconTraveler from 'assets/images/icons/ic_travellers.svg'
 import IconTreasure from 'assets/images/icons/ic_treasure.svg'
+import formatNumber from 'utils/formatNumber'
 
 export default function Hero(props) {
     function showMostPicked() {
@@ -18,6 +19,8 @@ export default function Hero(props) {
         }) ;
     }
 
+    
+
     return (
         <section className="container pt-4">
             <div className="row align-items-center">
@@ -26,12 +29,14 @@ export default function Hero(props) {
                         Forget Busy Work, <br />
                         Start Next Vacation
                     </h1>
-                    <p>
-                    <a className="mb-5 font-weight-light text-gray-500 w-75">
+                    
+                    <p className="mb-5 font-weight-light text-gray-500 w-75"
+                        style={{ lineHeight: "170%"}}
+                    >
                         we provide what you need to enjoy yout holiday with family, 
                         time to make another memorable moments.
-                    </a>
                     </p>
+                     
                     <Button
                         className="btn px-5"
                         hasShadow
@@ -41,7 +46,7 @@ export default function Hero(props) {
                         Show me now
                     </Button>
                    
-                    <div className="row mt-5">
+                    <div className="row" style={{ marginTop: 80 }}>
                         <div className="col-auto" style={{ marginRight: 35}}>
                             <img width="36"
                                 height="36"
@@ -50,7 +55,7 @@ export default function Hero(props) {
                              />
 
                              <h6 className="mt-3">
-                                {props.data.travelers}{" "}
+                                {formatNumber(props.data.travelers)}{" "}
                                 <span className="text-gray-500 font-weight-light">
                                     Travelers
                                 </span>
@@ -64,7 +69,7 @@ export default function Hero(props) {
                              />
 
                              <h6 className="mt-3">
-                                {props.data.treasures}{" "}
+                                {formatNumber(props.data.treasures)}{" "}
                                 <span className="text-gray-500 font-weight-light">
                                     Treasures
                                 </span>
@@ -79,7 +84,7 @@ export default function Hero(props) {
                              />
 
                              <h6 className="mt-3">
-                                {props.data.cities}{" "}
+                                {formatNumber(props.data.cities)}{" "}
                                 <span className="text-gray-500 font-weight-light">
                                     Cities
                                 </span>
