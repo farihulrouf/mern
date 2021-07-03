@@ -1,8 +1,10 @@
 import React from 'react'
 import Button from 'elements/Button'
+import Fade from "react-reveal/Fade";
 export default function Categories({ data }) {
     return data.map (( category, index ) => {
         return <section className="container" key={`category-${index}`}>
+            <Fade bottom>
         <h4 className="mb-3 font-weight-medium">
             {category.name}
         </h4>
@@ -45,7 +47,7 @@ export default function Categories({ data }) {
                  
             }
         </div>
-
+        </Fade>
       </section> 
     })
 }

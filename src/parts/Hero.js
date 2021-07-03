@@ -11,6 +11,8 @@ import IconTraveler from 'assets/images/icons/ic_travellers.svg'
 import IconTreasure from 'assets/images/icons/ic_treasure.svg'
 import formatNumber from 'utils/formatNumber'
 
+import Fade from "react-reveal/Fade";
+
 export default function Hero(props) {
     function showMostPicked() {
         window.scrollTo({
@@ -21,6 +23,7 @@ export default function Hero(props) {
     
 
     return (
+        <Fade bottom>
         <section className="container pt-4">
             <div className="row align-items-center">
                 <div className="col-auto pr-5" style={{ width: 530 }}>
@@ -117,5 +120,6 @@ export default function Hero(props) {
 
             </div>
         </section>
+        </Fade>
     )
 }
